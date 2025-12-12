@@ -1,6 +1,6 @@
 # J Trust Royal Bank – Official Website  
 **Responsive Banking Website**  
-**Narin Chor** (Batch 2 – Full-Stack Development)
+**CHOR Narin** (Batch 2 – Full-Stack Development)
 
 Live Demo: https://chor-narin.github.io/full-stack-assignment1/
 
@@ -9,20 +9,20 @@ Live Demo: https://chor-narin.github.io/full-stack-assignment1/
 ### Screenshots
 
 **Desktop View**  
-![Desktop Screenshot](./screenshots/desktop-home.png) 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
+![Desktop Screenshot]
+![alt text](./screenshot/image.png)
+![alt text](./screenshot/image-1.png)
+![alt text](./screenshot/image-2.png)
+![alt text](./screenshot/image-3.png)
+![alt text](./screenshot/image-4.png)
 
 **Mobile View**  
 ![Mobile Screenshot ]
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
+![alt text](./screenshot/image-5.png)
+![alt text](./screenshot/image-6.png)
+![alt text](./screenshot/image-7.png)
+![alt text](./screenshot/image-8.png)
+![alt text](./screenshot/image-9.png)
 
 
 ---
