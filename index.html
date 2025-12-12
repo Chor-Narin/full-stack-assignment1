@@ -17,8 +17,27 @@
                 <a href="#" class="search-icon">🔍</a>
                 <a href="about.html" class="top-link">ABOUT US</a>
                 <a href="contact.html" class="top-link">CONTACT US</a>
+                <!-- Language Selector - Click to open -->
                 <div class="language-selector">
-                    <img src="./assets/cambodia.png" alt="US Flag">
+                    <div class="lang-selected" id="langToggle">
+                        <img src="./assets/cambodia.png" alt="Khmer">
+                        <span>KM</span>
+                    </div>
+
+                    <div class="lang-dropdown" id="langDropdown">
+                        <div class="lang-option" data-lang="km">
+                            <img src="./assets/cambodia.png" alt="Khmer">
+                            <span>Khmer</span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="./assets/uk.png" alt="English">
+                            <span>English</span>
+                        </div>
+                        <div class="lang-option" data-lang="cn">
+                            <img src="./assets/china.png" alt="Chinese">
+                            <span>中文</span>
+                        </div>
+                    </div>
                 </div>
                 <a href="#" class="login-btn">👤 LOGIN</a>
             </div>
@@ -30,30 +49,69 @@
         <div class="container">
             <div class="nav-content">
                 <a href="index.html" class="logo">
-                    <img src="./assets/logo.svg" style="background-color: black; color:rgb(71, 190, 227)"
-                        alt="J Trust Royal Bank">
-                    <span>J Trust Royal Bank</span>
+                    <img src="./assets/logo.svg" alt="J Trust Royal Bank">
                 </a>
+
+                <!-- HAMBURGER + HIDDEN CHECKBOX -->
+                <input type="checkbox" id="mobile-menu-checkbox" class="mobile-menu-checkbox" hidden>
+                <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <!-- Overlay when menu is open -->
+                <!-- <label for="mobile-menu-checkbox" class="mobile-overlay"></label> -->
                 <ul class="nav-menu">
                     <li class="nav-item dropdown">
                         <a href="#" class="dropbtn">Personal Banking ▼</a>
                         <div class="dropdown-content">
                             <a href="#" class="nav-icon-link">
-                                <img src="./assets/navigations/deposit.png" alt="Deposit" style="background-color: rgb(71, 190, 227);"> 
-                               <span class="nav-icon-link-span">Deposit</span>
+                                <img src="./assets/navigations/personal/deposit.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Deposit</span>
                             </a>
-                            <a href="#">Loan</a>
-                            <a href="#">Merchant</a>
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/personal/loan.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Loan</span>
+                            </a>
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/personal/merchant.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Merchant</span>
+                            </a>
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/personal/card.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Card</span>
+                            </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="dropbtn">Affluent Banking ▼</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="dropbtn">SME ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/affluent/premirme.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Premier Banking</span>
+                            </a>
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/affluent/signature.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Signature Banking</span>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="dropbtn">Corporate Banking ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/corperation/trade.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Trading</span>
+                            </a>
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/corperation/market-analysis.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Market</span>
+                            </a>
+                            <a href="#" class="nav-icon-link">
+                                <img src="./assets/navigations/corperation/digital-banking.png" alt="Deposit">
+                                <span class="nav-icon-link-span">Digital Banking</span>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="dropbtn">News</a>
@@ -70,17 +128,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>JTR Mobile</h1>
-                    <h2>Built for TRUST. Designed for YOU.</h2>
-                    <a href="#" class="btn-learn-more">LEARN MORE</a>
-                </div>
                 <div class="hero-image">
                     <img src="./assets/banner.jpg" alt="JTR Mobile Phones" class="phone-mockup">
                 </div>
                 <!-- <div class="hero-qr">
-                    <img src="https://ext.same-assets.com/2637709473/1625979694.png" alt="QR Code">
-                </div> -->
+                        <img src="https://ext.same-assets.com/2637709473/1625979694.png" alt="QR Code">
+                    </div> -->
             </div>
         </div>
     </section>
@@ -130,7 +183,7 @@
                     <span class="currency-pair">EUR / USD</span>
                     <div class="rate-values">
                         <span class="rate-buy">1.1467 ▼</span>
-                        <span class="rate-sell">1.1787 ▼</span>
+                        <span class="rate-sell-profit">1.1787 ▲</span>
                     </div>
                 </div>
                 <div class="rate-item">
@@ -151,7 +204,7 @@
                     <span class="currency-pair">USD / CHF</span>
                     <div class="rate-values">
                         <span class="rate-buy">0.8221 ▼</span>
-                        <span class="rate-sell">0.7901 ▼</span>
+                        <span class="rate-sell-profit">0.7901 ▲</span>
                     </div>
                 </div>
                 <div class="rate-item">
@@ -351,16 +404,16 @@
 
     <!-- Live Chat Widget -->
     <!-- <div class="chat-widget">
-        <div class="chat-header">
-            🗨 Live Chat is currently under mainte... ▲
-        </div>
-        <div class="chat-form">
-            <input type="text" placeholder="Name" class="chat-input">
-            <input type="text" placeholder="Phone Number" class="chat-input">
-            <button class="chat-btn">CHAT</button>
-            <p class="chat-powered">Powered By XCALLY</p>
-        </div>
-    </div> -->
+            <div class="chat-header">
+                🗨 Live Chat is currently under mainte... ▲
+            </div>
+            <div class="chat-form">
+                <input type="text" placeholder="Name" class="chat-input">
+                <input type="text" placeholder="Phone Number" class="chat-input">
+                <button class="chat-btn">CHAT</button>
+                <p class="chat-powered">Powered By XCALLY</p>
+            </div>
+        </div> -->
 
     <!-- Scroll to Top Button -->
     <a href="#" class="scroll-to-top"><img src="./assets/up-arrow (1).png" alt="Back to top"></a>
@@ -376,6 +429,29 @@
         document.querySelector('.scroll-to-top').addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        document.getElementById('langToggle').addEventListener('click', function (e) {
+            e.stopPropagation();
+            document.querySelector('.language-selector').classList.toggle('active');
+        });
+
+        // Close when clicking anywhere else
+        document.addEventListener('click', function () {
+            document.querySelector('.language-selector').classList.remove('active');
+        });
+
+        // Optional: Change selected language on click
+        document.querySelectorAll('.lang-option').forEach(item => {
+            item.addEventListener('click', function () {
+                const img = this.querySelector('img').src;
+                const text = this.querySelector('span').textContent;
+
+                document.querySelector('#langToggle img').src = img;
+                document.querySelector('#langToggle span').textContent = text === 'Khmer' ? 'KM' :
+                    text === 'English' ? 'EN' : '中文';
+
+                document.querySelector('.language-selector').classList.remove('active');
+            });
         });
     </script>
 </body>

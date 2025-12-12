@@ -90,6 +90,9 @@ body {
     padding: 0 20px;
 }
 
+
+
+
 /* Top Bar */
 .top-bar {
     background-color: white;
@@ -102,12 +105,13 @@ body {
     align-items: center;
     justify-content: flex-end;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .search-icon {
     color: #40b5e4;
-    text-decoration: none;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .top-link {
@@ -115,13 +119,76 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
-.language-selector img {
-    width: 30px;
-    height: 0px;
-    border-radius: 2px;
+.language-selector {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lang-selected {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #f8fbff;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.lang-selected img {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.lang-selected:hover {
+    background: #e6f3ff;
+}
+
+/* Dropdown - hidden by default */
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: white;
+    min-width: 140px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+/* Show when active */
+.language-selector.active .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    transition: background 0.2s;
+}
+
+.lang-option:hover {
+    background: #f0f7ff;
+}
+
+.lang-option img {
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
 }
 
 .login-btn {
@@ -132,7 +199,11 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
+    white-space: nowrap;
 }
+
+
+
 
 /* Main Navigation */
 .main-nav {
@@ -155,20 +226,14 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    text-decoration: none;
-    color: #0e1f3a;
 }
 
 .logo img {
-    width: 35px;
-    height: 35px;
+    width: 100%;
+    height: auto;
 }
 
-.logo span {
-    font-size: 18px;
-    font-weight: 600;
-    color: #222;
-}
+
 
 
 
@@ -243,9 +308,10 @@ body {
 /* Navigation Icon Links – Deposit, Transfer, Pay Bills, etc. */
 .nav-icon-link {
     display: flex;
-    align-items: center;   /* centers text + icon vertically */
-    gap: 20px;
-    padding: 12px 20px;
+    align-items: center;  
+    justify-content: center;
+    gap: 14px;
+    padding: 10px 20px;
     background-color: #f3f7f8;
     border-radius: 12px;
     text-decoration: none;
@@ -254,6 +320,7 @@ body {
     color: #000;
     transition: all 0.3s ease;
     white-space: nowrap;
+    border: none
 }
 
 .nav-icon-link:hover {
@@ -266,19 +333,21 @@ body {
 .nav-icon-link img {
     width: 40px;
     height: 40px;
-    padding: 8px;        /* reduce padding so shape matches text height */
+    padding: 8px; 
     background-color: #47bee3;
     border-radius: 50%;
     object-fit: contain;
+
 }
 
 .nav-icon-link-span {
     font-size: 18px;
     font-weight: 600;
-    color: #0e1f3a;
-    line-height: 1;      /* helps vertical alignment */
+    position: relative;
+    top: -13px;
+    left: 10px;
+    line-height: 1.1;
 }
-
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
@@ -394,8 +463,7 @@ body {
 }
 
 .hero-image img {
-    max-width: 550px;
-    width: 100%;
+    max-width: 100%;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
     animation: float 3s ease-in-out infinite;
@@ -552,6 +620,11 @@ body {
 .rate-buy, .rate-sell {
     font-size: 15px;
     color: #dc3545;
+    font-weight: 600;
+}
+.rate-sell-profit {
+    font-size: 15px;
+    color: #28a745;
     font-weight: 600;
 }
 
@@ -1766,54 +1839,124 @@ body:not(:target) .scroll-to-top,
     gap: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) { /* Adjust breakpoint for tablet/larger mobiles */
-    .promotions-cards {
-        grid-auto-columns: calc(50% - 15px);
-    }
-    .nav-content {
-        padding: 10px 0; /* Adjust padding for smaller screens */
+/* ========================================= */
+/* RESPONSIVE MOBILE MENU – 80% WIDTH (NEW)  */
+/* ========================================= */
+@media (max-width: 992px) {
+
+    /* Show hamburger button */
+    .mobile-menu-toggle {
+        display: flex;
     }
 
+    /* Hidden checkbox that controls the menu */
+    .mobile-menu-checkbox {
+        display: none;
+    }
+
+    /* Mobile Menu – 80% width, slides from right */
     .nav-menu {
         position: fixed;
-        top: 0; /* Changed to 0 to cover top-bar as well */
-        left: 0;
-        width: 100%;
-        height: 100%; /* Full height */
-        background-color: white;
+        top: 0;
+        right: 0;
+        width: 80% !important;
+        max-width: 380px;
+        height: 100vh;
+        background: white;
         flex-direction: column;
-        justify-content: center; /* Center items vertically */
-        align-items: center; /* Center items horizontally */
-        gap: 20px; /* Adjust gap for mobile items */
-        padding: 20px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        align-items: center;
+        justify-content: flex-start;
+        padding: 100px 30px 40px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
         transform: translateX(100%);
-        transition: transform 0.4s ease-in-out; /* Smoother transition */
-        z-index: 99;
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 100;
+        overflow-y: auto;
     }
 
+    /* Slide in when checkbox is checked */
+    #mobile-menu-checkbox:checked ~ .nav-menu {
+        transform: translateX(0);
+    }
+
+    /* Dark overlay (the 20% on the left) */
+    #mobile-menu-checkbox:checked ~ .mobile-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        z-index: 98;
+        cursor: pointer;
+    }
+
+    /* Menu items styling */
     .nav-item {
-        width: 100%; /* Full width for menu items */
+        width: 100%;
         text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid #f0f0f0;
+        margin: 8px 0;
     }
 
-    .nav-item:last-child {
+    .nav-item a,
+    .dropbtn {
+        font-size: 19px;
+        font-weight: 500;
+        color: #0e1f3a;
+        padding: 14px 20px;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-item:last-child a {
         border-bottom: none;
     }
 
-    .nav-item a {
-        font-size: 20px; /* Larger font size for mobile */
-        padding: 10px;
-        display: block; /* Make the whole area clickable */
+    /* Dropdowns in mobile – open on click */
+    .dropdown:hover .dropdown-content,
+    .dropdown.active .dropdown-content {
+        display: block;
+        position: static;
+        box-shadow: none;
+        background: #f8fbff;
+        border-radius: 12px;
+        margin-top: 10px;
+        padding: 10px 0;
     }
 
-    .mobile-menu-toggle {
-        display: flex; /* Show hamburger icon */
+    .dropdown-content a {
+        font-size: 16px;
+        padding: 12px 20px;
+        border-bottom: none;
+    }
+
+
+    /* Hamburger → X animation */
+    #mobile-menu-checkbox:checked + .mobile-menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    #mobile-menu-checkbox:checked + .mobile-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu-checkbox:checked + .mobile-menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    /* Promotions carousel – 2 cards on tablet */
+    .promotions-cards {
+        grid-auto-columns: calc(50% - 15px);
     }
 }
+
+
+
+
+
 @media (max-width: 768px) {
     .promotions-cards {
         grid-auto-columns: 100%;
