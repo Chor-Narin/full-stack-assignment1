@@ -17,9 +17,13 @@ Live Demo: https://chor-narin.github.io/full-stack-assignment1/
 ![alt text](image-4.png)
 
 **Mobile View**  
-![Mobile Screenshot 1](./screenshots/mobile-home.jpg)  
-![Mobile Screenshot 2](./screenshots/mobile-menu-open.jpg)  
-![Mobile Screenshot 3](./screenshots/mobile-language-dropdown.jpg)
+![Mobile Screenshot ]
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
+
 
 ---
 
@@ -56,7 +60,7 @@ Live Demo: https://chor-narin.github.io/full-stack-assignment1/
 | Asset Type       | Source                                      | License      |
 |------------------|---------------------------------------------|--------------|
 | Bank logo & mockups | Designed by instructor-provided assets + edited by me | Personal use |
-| Flags (Cambodia, UK, China) | https://flagcdn.com                  | Free         |
+| Flags (Cambodia, UK, China) | https://www.flaticon.com/                  | Free         |
 | Navigation icons (deposit, etc.) | Created/edited from free SVG sources | Free         |
 | Promotion cards  | J Trust Royal Bank official website (used for reference only) | Fair use for education |
 | Background & hero images | Unsplash / Pexels (royalty-free)         | Free         |
@@ -76,5 +80,5 @@ No build tools or server required – pure static site
 
 ---
 
-Made with ❤️ by **Narin Chor** – December 2025  
+Made with ❤️ by **CHOR Narin** – December 2025  
 Batch 2 – Full-Stack Development  
